@@ -1,0 +1,21 @@
+/* Maestro Cinema Render - Naples Summer Edition */
+:root {
+  --cinema-brightness: 1.05;
+  --cinema-contrast: 1.10;
+  --cinema-saturation: 1.15;
+}
+
+.gallery-image-naples {
+  filter: brightness(var(--cinema-brightness)) 
+          contrast(var(--cinema-contrast)) 
+          saturate(var(--cinema-saturation));
+  box-shadow: 0 0 50px rgba(255, 230, 200, 0.15); /* Effet de halo solaire */
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1); /* Mouvement fluide */
+}
+
+/* Simulation de la brume de chaleur pour Naples ou du silence pour Neuchâtel */
+.aesthetic-overlay {
+  backdrop-filter: blur(2px);
+  mask-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+  opacity: 0.4;
+}
