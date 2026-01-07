@@ -1,4 +1,19 @@
-import { sqliteD1Adapter } from '@payloadcms/db-d1-sqlite'
+import { cloudflareStorage } from '@payloadcms/storage-cloudflare'
+
+// Configuration Maestro pour le stockage R2
+export default buildConfig({
+  storage: cloudflareStorage({
+    collections: {
+      media: true, // Vos photos de Naples et Neuchâtel
+    },
+    bucket: process.env.R2_BUCKET_NAME,
+    baseUrl: process.env.R2_PUBLIC_URL,
+    id: process.env.R2_ACCOUNT_ID,
+    accessKeyId: process.env.R2_ACCESS_KEY_ID,
+    secretAccessKey: process.env.R2_SECRET_ACCESS_KEY,
+  }),
+  // ... reste du code existant
+})import { sqliteD1Adapter } from '@payloadcms/db-d1-sqlite'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import path from 'path'
 import { buildConfig } from 'payload'
