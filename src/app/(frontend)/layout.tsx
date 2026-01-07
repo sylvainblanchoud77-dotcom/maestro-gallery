@@ -1,4 +1,4 @@
-import React from 'react'
+import '../styles/cinema-render.css';import React from 'react'
 import './styles.css'
 
 export const metadata = {
